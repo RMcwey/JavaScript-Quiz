@@ -14,23 +14,23 @@
       <h1>JavaScript Pop-quiz</h1> 
         <div class = options>
           <button class = "high-scores">High-scores</button>
-          <div class = "timer">Time Left: 60</div>
+          <div id = "timer">Time Left: 60</div>
         </div>
     </header>
 
     <div class = "card">
       <div id="question">Question Box that is going to have 
         all of our quesitions in this box here.</div>
-      <form id="answer-container" class= "hide"> <!--May need to remove form-->
-        <div class="multiple-choice grid">
-          <button class="btn">Answer 1</button>
-          <button class="btn">Answer 2</button>
-          <button class="btn">Answer 3</button>
-          <button class="btn">Answer 4</button>
-        </div>
+      <form id="answer-container" class= "grid hide">
+        <button class="btn">Answer 1</button>
+        <button class="btn">Answer 2</button>
+        <button class="btn">Answer 3</button>
+        <button class="btn">Answer 4</button>
         <p class="hide">Answer Correct Y/N</p>
       </form>
       <div class="start-btn btn">Start</div>
+      <div class="next-btn btn hide">Next</div>
+      <div class="restart-btn btn hide">Restart</div>
     </div>
     <footer>
       <p>Thanks for Visiting</p>

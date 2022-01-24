@@ -27,13 +27,9 @@ body {
     border-radius:  25px;
 }
 
-.timer {
+#timer {
     font-size: large;
     padding: 10px;
-}
-
-.hide {
-    display: none;
 }
 
 .card {
@@ -64,18 +60,19 @@ form {
     background-color: navy;
 }
 
-.multiple-choice {
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding-inline-start: 0;
-    background-color: navy;
-}
+/* #answer-container {
+    
+} */
 
 .grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 33px;
     margin: 20px 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    background-color: navy;
 }
 
 .btn {
@@ -109,4 +106,8 @@ p {
 
 .start-btn {
     margin: 10px;
+}
+
+.hide {
+    display: none;
 }
