@@ -37,7 +37,8 @@ nextButton.addEventListener('click', () => {
   nextQuestion()
 })
 restartButton.addEventListener('click', () => {
-  timeLeft = 60;
+  
+
 
 })
 
@@ -61,7 +62,7 @@ var timerfunc = function timer() {
     }else {
       timerEl.textContent = '';
       clearInterval(timeInterval);
-      // link to high scores or crap page
+      location.replace("./assets/pages/ranout.html")
     }
   }, 1000)
 };
@@ -83,7 +84,6 @@ function showQuestion(question) {
     button.addEventListener('click', selectAnswer)
     answersEl.appendChild(button)
   })
-  button.removeEventListener('click', selectAnswer)
 }
 
 function resetState() {
