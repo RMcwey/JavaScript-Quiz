@@ -111,17 +111,3 @@ p {
 .hide {
     display: none;
 }
-
-
-
-.leaderboard {
-    background-color: navy;
-}
-
-.leaderboard ol {
-    list-style-position: inside;
-}
-
-.leaderboard li {
-    list-style-position: inside;
-}

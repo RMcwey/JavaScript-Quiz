@@ -22,7 +22,8 @@ const nextButton = document.body.querySelector('.next-btn')
 const restartButton = document.body.querySelector('.restart-btn')
 const questionEl = document.getElementById('question')
 const answersEl = document.getElementById('answer-container')
-
+const answerP =  document.getElementById('grade')
+var answerCount = localStorage.getItem("correctA")
 
 var timerEl = document.getElementById('timer');
 var timeLeft = '';
@@ -45,7 +46,7 @@ function startQuiz() {
   answersEl.classList.remove('hide')
   randomizedQuestions = possibleQuestions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
-  timeLeft = 60;
+  timeLeft = 59;
   timerfunc();
   nextQuestion();
   
@@ -60,6 +61,7 @@ var timerfunc = function timer() {
     }else {
       timerEl.textContent = '';
       clearInterval(timeInterval);
+      // link to high scores or crap page
     }
   }, 1000)
 };
@@ -77,14 +79,15 @@ function showQuestion(question) {
     button.classList.add('btn')
     if (answer.correct) {
       button.dataset.correct = answer.correct
-      
     }
     button.addEventListener('click', selectAnswer)
     answersEl.appendChild(button)
   })
+  button.removeEventListener('click', selectAnswer)
 }
 
 function resetState() {
+  answerP.classList.add('hide')
   nextButton.classList.add('hide')
   while (answersEl.firstChild) {
     answersEl.removeChild(answersEl.firstChild)
@@ -92,8 +95,8 @@ function resetState() {
 }
 
 function selectAnswer(e) {
-  const clickedButton = e.target
-  const correct = clickedButton.dataset.correct
+  let clickedButton = e.target
+  let correct = clickedButton.dataset.correct
   Array.from(answersEl.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
   })
@@ -102,13 +105,22 @@ function selectAnswer(e) {
   } else {
     restartButton.classList.remove('hide');
   }
+  if (clickedButton = correct) {
+    answerP.classList.remove('hide')
+    answerP.textContent = 'Correct!'
+    answerCount++
+    localStorage.setItem("correctA", answerCount);
+  } else {
+    answerP.classList.remove('hide')
+    answerP.textContent = 'Incorrect! 15 second penalty!'
+    timeLeft = (timeLeft - 15)
+  }
 }
 
 function setStatusClass(element, correct) {
   clearStatusClass(element);
   if (correct) {
     element.classList.add('correct');
-    // add correct script below
   } else {
     element.classList.add('wrong');
   }
