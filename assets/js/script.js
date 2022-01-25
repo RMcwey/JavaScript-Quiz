@@ -131,48 +131,48 @@ const possibleQuestions = [
     ]
   },
   {
-    question: 'This is Question 2',
+    question: 'What type of language is JavaScript?',
     answers: [
-      {text: 'answer 2:1', correct: false },
-      {text: 'answer 2:2', correct: false},
-      {text: 'answer 2:3', correct: false},
-      {text: 'answer 2:4', correct: true},
+      {text: 'Functional programming language', correct: false },
+      {text: 'Spanish', correct: false},
+      {text: 'The language of Starbucks', correct: false},
+      {text: 'Object-oriented language', correct: true},
     ]
   },
   {
-    question: 'This is Question 3',
+    question: 'What does "var" stand for?',
     answers: [
-      {text: 'answer 3:1', correct: false },
-      {text: 'answer 3:2', correct: false},
-      {text: 'answer 3:3', correct: true},
-      {text: 'answer 3:4', correct: false},
+      {text: 'Vector Applied Research', correct: false },
+      {text: 'Variance', correct: false},
+      {text: 'Variable', correct: true},
+      {text: 'Constant', correct: false},
     ]
   },
   {
-    question: 'This is Question 4',
+    question: 'What can you do with JavaScript?',
     answers: [
-      {text: 'answer 3:1', correct: false },
-      {text: 'answer 3:2', correct: true},
-      {text: 'answer 3:3', correct: false},
-      {text: 'answer 3:4', correct: true},
+      {text: 'Make coffee', correct: false },
+      {text: 'Make Games', correct: true},
+      {text: '3D print mugs', correct: false},
+      {text: 'Animate Websites', correct: true},
     ]
   },
   {
-    question: 'This is Question 4',
+    question: 'Aside from the end, where might a semi-colon go in JS?',
     answers: [
-      {text: 'answer 4:1', correct: true},
-      {text: 'answer 4:2', correct: false},
-      {text: 'answer 4:3', correct: false},
-      {text: 'answer 4:4', correct: false},
+      {text: 'The end', correct: true},
+      {text: 'The middle', correct: false},
+      {text: 'The top', correct: false},
+      {text: 'Next to a colon', correct: false},
     ]
   },
   {
-    question: 'This is Question 5',
+    question: 'What year was JavaScript created?',
     answers: [
-      {text: 'answer 5:1', correct: false },
-      {text: 'answer 5:2', correct: false},
-      {text: 'answer 5:3', correct: false},
-      {text: 'answer 5:4', correct: true},
+      {text: '2003', correct: false },
+      {text: '2014', correct: false},
+      {text: '2000', correct: false},
+      {text: '1995', correct: true},
     ]
   },
 ]
