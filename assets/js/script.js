@@ -1,53 +1,33 @@
-// var cardContent = document.getElementsByClassName(".card");
-// var questionClick = document.querySelectorAll("li");
-// let possibleQuestions = {
-//         question: 'Which is the true name of JavaScript',
-//         answer1: 'JavaScript',
-//         answer2: 'ECMAScript',
-//         answer3: 'Jscript',
-//         answer4: 'All the Above',
-// }
-
-// // var pushQuestions = function(event){
-// //     event.preventDefault();
-// //     cardContent.textContent = possibleQuestions[0];
-
-// // }
-// questionClick.addEventListener("click", function() {
-    
-// });
-
-const startButton = document.body.querySelector('.start-btn')
-const nextButton = document.body.querySelector('.next-btn')
-const restartButton = document.body.querySelector('.restart-btn')
-const questionEl = document.getElementById('question')
-const answersEl = document.getElementById('answer-container')
-const answerP =  document.getElementById('grade')
-var answerCount = localStorage.getItem("correctA")
+const startButton = document.body.querySelector('.start-btn');
+const nextButton = document.body.querySelector('.next-btn');
+const submitButton = document.body.querySelector('.submit-btn');
+const questionEl = document.getElementById('question');
+const answersEl = document.getElementById('answer-container');
+const answerP =  document.getElementById('grade');
+var answerCount = localStorage.getItem("correctA");
 
 var timerEl = document.getElementById('timer');
 var timeLeft = '';
 
-let randomizedQuestions, currentQuestionIndex
+let randomizedQuestions, currentQuestionIndex;
 
-startButton.addEventListener('click', startQuiz)
+startButton.addEventListener('click', startQuiz);
 
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   nextQuestion()
-})
-restartButton.addEventListener('click', () => {
-  
-
-
-})
+});
+// submitButton.addEventListener('click', () => {
+// });
 
 function startQuiz() {
-  startButton.classList.add('hide')
-  answersEl.classList.remove('hide')
-  randomizedQuestions = possibleQuestions.sort(() => Math.random() - .5)
-  currentQuestionIndex = 0
+  startButton.classList.add('hide');
+  answersEl.classList.remove('hide');
+  randomizedQuestions = possibleQuestions.sort(() => Math.random() - .5);
+  currentQuestionIndex = 0;
   timeLeft = 59;
+  // localStorage.removeItem("correctA", answerCount);
+  answerCount = " ";
   timerfunc();
   nextQuestion();
   
@@ -63,59 +43,60 @@ var timerfunc = function timer() {
       timerEl.textContent = '';
       clearInterval(timeInterval);
       location.replace("./assets/pages/ranout.html")
+      answerCount= " ";
     }
   }, 1000)
 };
 
 function nextQuestion() {
-  resetState()
-  showQuestion(randomizedQuestions[currentQuestionIndex])
+  resetState();
+  showQuestion(randomizedQuestions[currentQuestionIndex]);
 }
 
 function showQuestion(question) {
   questionEl.innerText = question.question
   question.answers.forEach(answer => {
-    const button = document.createElement('btn')
-    button.innerText = answer.text
-    button.classList.add('btn')
+    const button = document.createElement('btn');
+    button.innerText = answer.text;
+    button.classList.add('btn');
     if (answer.correct) {
       button.dataset.correct = answer.correct
     }
     button.addEventListener('click', selectAnswer)
     answersEl.appendChild(button)
   })
-}
+};
 
 function resetState() {
-  answerP.classList.add('hide')
-  nextButton.classList.add('hide')
+  answerP.classList.add('hide');
+  nextButton.classList.add('hide');
   while (answersEl.firstChild) {
-    answersEl.removeChild(answersEl.firstChild)
-  }
-}
+    answersEl.removeChild(answersEl.firstChild);
+  };
+};
 
 function selectAnswer(e) {
-  let clickedButton = e.target
-  let correct = clickedButton.dataset.correct
+  let clickedButton = e.target;
+  let correct = clickedButton.dataset.correct;
   Array.from(answersEl.children).forEach(button => {
-    setStatusClass(button, button.dataset.correct)
+    setStatusClass(button, button.dataset.correct);
   })
   if (randomizedQuestions.length > currentQuestionIndex + 1) {
   nextButton.classList.remove('hide');
   } else {
-    restartButton.classList.remove('hide');
+    submitButton.classList.remove('hide');
   }
   if (clickedButton = correct) {
-    answerP.classList.remove('hide')
-    answerP.textContent = 'Correct!'
-    answerCount++
+    answerP.classList.remove('hide');
+    answerP.textContent = 'Correct!';
+    answerCount++;
     localStorage.setItem("correctA", answerCount);
   } else {
-    answerP.classList.remove('hide')
-    answerP.textContent = 'Incorrect! 15 second penalty!'
-    timeLeft = (timeLeft - 15)
+    answerP.classList.remove('hide');
+    answerP.textContent = 'Incorrect! 15 second penalty!';
+    timeLeft = (timeLeft - 15);
   }
-}
+};
 
 function setStatusClass(element, correct) {
   clearStatusClass(element);
@@ -172,7 +153,7 @@ const possibleQuestions = [
   {
     question: 'Aside from the end, where might a semi-colon go in JS?',
     answers: [
-      {text: 'The end', correct: true},
+      {text: 'The beginning', correct: true},
       {text: 'The middle', correct: false},
       {text: 'The top', correct: false},
       {text: 'Next to a colon', correct: false},
@@ -189,4 +170,5 @@ const possibleQuestions = [
   },
 ]
 
+// for potential progress meter
 var totalQuestions = possibleQuestions.length

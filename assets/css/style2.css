@@ -14,7 +14,42 @@ body {
     background-repeat: no-repeat;
 }
 
+.go-back {
+    font-size: large;
+    padding: 10px;
+    border-radius:  25px;
+}
 
+.card {
+    border: solid lightgray 5px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 60%;
+    margin: 20px auto;
+    /* padding: 1% 2% 3%; */
+    background-color: navy;
+}
+
+#question {
+    border-radius: 25px;
+    padding: 20px;
+    font-size: x-large;
+    margin: 20px;
+    /* background-color: navy; */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 33px;
+    margin: 20px 0;
+    margin-block-start: 0;
+    margin-block-end: 25px;
+    padding-inline-start: 0;
+    background-color: navy;
+}
 
 .leaderboard {
     background-color: navy;
@@ -26,4 +61,13 @@ body {
 
 .leaderboard li {
     list-style-position: inside;
+}
+
+.btn {
+    /* display: flex;
+    flex-direction: column;*/
+    /* margin: 20px; */
+    padding: 30px;
+    border: groove silver 4px;
+    border-radius: 25px;
 }

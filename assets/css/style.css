@@ -51,14 +51,15 @@ body {
     margin: 20px;
     /* background-color: navy; */
 }
-
+/* 
 form {
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     background-color: navy;
-}
+    padding-bottom: 50px; */
+
 
 /* #answer-container {
     
@@ -70,15 +71,15 @@ form {
     gap: 33px;
     margin: 20px 0;
     margin-block-start: 0;
-    margin-block-end: 0;
+    margin-block-end: 25px;
     padding-inline-start: 0;
     background-color: navy;
 }
 
 .btn {
     /* display: flex;
-    flex-direction: column;
-    margin: 20px; */
+    flex-direction: column;*/
+    /* margin: 20px; */
     padding: 30px;
     border: groove silver 4px;
     border-radius: 25px;
