@@ -122,16 +122,16 @@ const possibleQuestions = [
   {
     question: 'Which of the following are the true names of JavaScript',
     answers: [
-      {text: 'JavaScript', correct: false },
-      {text: 'ECMAScript', correct: false},
-      {text: 'Jscript', correct: false},
+      {text: 'JavaScript', correct: true},
+      {text: 'ECMAScript', correct: true},
+      {text: 'Jscript', correct: true},
       {text: 'All of the Above', correct: true},
     ]
   },
   {
     question: 'What type of language is JavaScript?',
     answers: [
-      {text: 'Functional programming language', correct: false },
+      {text: 'Functional programming language', correct: false},
       {text: 'Spanish', correct: false},
       {text: 'The language of Starbucks', correct: false},
       {text: 'Object-oriented language', correct: true},
@@ -140,7 +140,7 @@ const possibleQuestions = [
   {
     question: 'What does "var" stand for?',
     answers: [
-      {text: 'Vector Applied Research', correct: false },
+      {text: 'Vector Applied Research', correct: false},
       {text: 'Variance', correct: false},
       {text: 'Variable', correct: true},
       {text: 'Constant', correct: false},
@@ -149,7 +149,7 @@ const possibleQuestions = [
   {
     question: 'What can you do with JavaScript?',
     answers: [
-      {text: 'Make coffee', correct: false },
+      {text: 'Make coffee', correct: false},
       {text: 'Make Games', correct: true},
       {text: '3D print mugs', correct: false},
       {text: 'Animate Websites', correct: true},
