@@ -122,10 +122,10 @@ const possibleQuestions = [
   {
     question: 'Which of the following are the true names of JavaScript',
     answers: [
-      {text: 'JavaScript', correct: true},
+      {text: 'JS', correct: false},
       {text: 'ECMAScript', correct: true},
-      {text: 'Jscript', correct: true},
-      {text: 'All of the Above', correct: true},
+      {text: 'script', correct: false},
+      {text: 'Java', correct: false,
     ]
   },
   {
