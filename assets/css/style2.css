@@ -64,24 +64,29 @@ h2 {
     background-color: navy;
 }
 
-.leaderboard {
+#leaderboard {
     background-color: navy;
 }
 
-.leaderboard ol {
-    list-style-position: inside;
+#leaderboard ol {
+    background-color: navy;
 }
 
-.leaderboard li {
-    list-style-position: inside;
+#leaderboard li {
+   border-bottom: white solid 1px;
 }
 
 .btn {
     /* display: flex;
     flex-direction: column;*/
-    /* margin: 20px; */
+    margin: 22px;
     padding: 30px;
     border: groove silver 4px;
     border-radius: 25px;
 }
 
+.buttons {
+    display: flex;
+    background-color: navy;
+    justify-content: center;
+}
