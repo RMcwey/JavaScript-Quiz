@@ -17,8 +17,10 @@ nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   nextQuestion()
 });
-// submitButton.addEventListener('click', () => {
-// });
+
+submitButton.addEventListener('click', () => {
+  location.replace("./assets/pages/leaderboard.html")
+});
 
 function startQuiz() {
   startButton.classList.add('hide');
@@ -37,13 +39,15 @@ var timerfunc = function timer() {
     if (timeLeft > 1) {
       timerEl.innerText= "Time Left: " + timeLeft;
       timeLeft--;
-    // } else if () {
-    //   clearInterval(timeInterval);
     }else {
       timerEl.textContent = '';
       clearInterval(timeInterval);
       location.replace("./assets/pages/ranout.html")
-      answerCount= " ";
+    }
+    if (document.getElementById('submit').classList.contains('stop')) {
+      clearInterval(timeInterval);
+      answerCount= timeLeft + 1;
+      localStorage.setItem("correctA", answerCount);
     }
   }, 1000)
 };
@@ -85,12 +89,13 @@ function selectAnswer(e) {
   nextButton.classList.remove('hide');
   } else {
     submitButton.classList.remove('hide');
+    submitButton.classList.add('stop');
   }
   if (clickedButton = correct) {
     answerP.classList.remove('hide');
     answerP.textContent = 'Correct!';
-    answerCount++;
-    localStorage.setItem("correctA", answerCount);
+    // answerCount++;
+    // localStorage.setItem("correctA", answerCount);
   } else {
     answerP.classList.remove('hide');
     answerP.textContent = 'Incorrect! 15 second penalty!';
