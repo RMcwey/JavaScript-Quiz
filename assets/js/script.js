@@ -91,7 +91,7 @@ function selectAnswer(e) {
     submitButton.classList.remove('hide');
     submitButton.classList.add('stop');
   }
-  if (clickedButton = correct) {
+  if (clickedButton == correct) {
     answerP.classList.remove('hide');
     answerP.textContent = 'Correct!';
     // answerCount++;
@@ -125,7 +125,7 @@ const possibleQuestions = [
       {text: 'JS', correct: false},
       {text: 'ECMAScript', correct: true},
       {text: 'script', correct: false},
-      {text: 'Java', correct: false,
+      {text: 'Java', correct: false},
     ]
   },
   {
