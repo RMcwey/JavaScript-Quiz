@@ -91,7 +91,7 @@ function selectAnswer(e) {
     submitButton.classList.remove('hide');
     submitButton.classList.add('stop');
   }
-  if (clickedButton == correct) {
+  if (clickedButton = correct) {
     answerP.classList.remove('hide');
     answerP.textContent = 'Correct!';
     // answerCount++;
